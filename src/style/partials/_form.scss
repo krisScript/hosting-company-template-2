@@ -1,0 +1,21 @@
+.form{
+    width: 100%;
+    @include flex-center;
+    padding: 0.5rem;
+    input[type="text"]{
+       @include desktop{
+           width: 40%;
+       }
+    }
+    &__input{
+        border: none;
+        font-size: 1.2rem;
+        height: 3rem;
+        padding: 0.3rem;
+       
+    &__button{
+        height: 3rem;
+    }
+}
+}
+   

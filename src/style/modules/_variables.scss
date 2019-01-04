@@ -1,0 +1,11 @@
+//Theme
+$primary: #4586ff;
+$secondary: #ffffff;
+$dark: #3B4449;
+$light:#F8F9FA;
+$rating:#f7af1e;
+//I'm using css varible because it will be changed with js
+:root {
+    --nav:#4586ff;
+    --nav--secondary:#ffffff;
+}

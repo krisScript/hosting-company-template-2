@@ -1,0 +1,56 @@
+.nav--mobile {
+  display: none;
+  &--active {
+    @include desktop{
+      display: none;
+    }
+    z-index: 2;
+    width: 100vw;
+    position: fixed;
+    display: block;
+    &__list {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+
+      &__item {
+        width: 100%;
+        text-align: center;
+        a {
+         display: block;
+         background: $primary;
+        padding: 1.5rem;
+          width: 100%;
+          background: red;
+          background: $primary;
+          text-decoration: none;
+          color: $secondary;
+          font-size: 1rem;
+          &.active{
+            background: $secondary;
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+}
+
+@for $i from 1 through 6 {
+  .nav--mobile--active__list :nth-child(#{$i}) {
+    animation: menu-item ease-in-out 300ms;
+    animation-delay: (150ms * $i) - 300ms;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+  @keyframes menu-item {
+    from {
+      opacity: 0;
+      transform: scale(0.3);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}

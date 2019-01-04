@@ -1,0 +1,18 @@
+.cards--container{
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+    width: 100vw;
+    margin-top: 2rem;
+    flex-flow: column;
+    &--tablet--row{
+        @include tablet{
+            flex-flow: row wrap;
+        }
+    }
+    @include desktop{
+        flex-flow: row wrap;
+        justify-content: center;
+        width: 95%;
+    }
+}

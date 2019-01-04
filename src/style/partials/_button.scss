@@ -1,0 +1,18 @@
+.button{
+    color:$secondary;
+    background: $primary;
+    border: none;
+    padding: 0.7rem 1.2rem 0.7rem 1.2rem;
+    font-size: 1.2rem;
+    transition: all 200ms;
+    outline: none;
+    border: solid 3px transparent;
+    &:hover{
+       background: darken($primary,5%);
+    }
+    &--small{
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem 0.5rem 1rem;
+    }
+    
+}

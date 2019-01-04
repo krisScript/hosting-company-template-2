@@ -1,0 +1,155 @@
+.card {
+  @include flex-center;
+  flex-flow: column;
+  margin: 1rem;
+  background: $secondary;
+  padding: 2rem;
+  position: relative;
+  width: 90%;
+  @include desktop {
+    flex: 1 0 25%;
+  }
+  &--transparent{
+    background: transparent;
+  }
+  &--shadow {
+    box-shadow: 0 1px 4px 0 rgba($dark, 0.3);
+  }
+
+  &__img{
+    height: 10rem;
+    width: 10rem;
+    padding: 1rem;
+    &--large{
+      height: 13rem;
+      width: 13rem;
+    }
+    &--round{
+      border-radius: 100%;
+    }
+  }
+  
+  &--small{
+    flex:1 1 100%;
+    @include tablet{
+      flex: 1 0 30%;
+    }
+      @include desktop{
+        flex: 1 0 20%;
+      }
+  }
+  &__icon {
+    font-size: 3rem;
+    color: $primary;
+    padding: 0.7rem;
+
+  }
+  &__head {
+    width: 100%;
+    height: 7rem;
+    background: $primary;
+  }
+  &__pricing--title {
+    font-size: 1.7rem;
+ }
+&__pricing--list{
+    list-style: none;
+    @include flex-center;
+    flex-flow: column;
+    margin: 2rem 0 2rem 0 ;
+    &__item{
+        padding: 1rem;
+        font-size: 1rem;
+        opacity: 0.8;
+    }
+    border-bottom: solid 2px lighten($dark,25%);
+}
+  &__title {
+    font-size: 1.3rem;
+  }
+  &__subtitle {
+    font-size: 1.3rem;
+    padding: 1rem;
+    color: lighten($dark, 30%);
+  }
+  &__text {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    padding: 1rem;
+    width: 100%;
+    &--center {
+      text-align: center;
+    }
+  }
+  &__overlay{
+    padding: 1rem;
+    bottom:0;
+    color: $secondary;
+    @include flex-center;
+    position: absolute;
+    opacity: 0;
+    
+  }
+  &:hover{
+    .card__overlay{
+      animation: slide-up linear 200ms forwards;
+      @keyframes slide-up {
+          from {
+            opacity: 0;
+            transform:translateY(-4rem) ;
+          }
+          to {
+            opacity: 1;
+            transform:translateY(0rem)  ;
+          }
+        }
+
+    }
+   
+  }
+
+
+
+  &--carousel {
+    display: none;
+     @include desktop{
+       display: flex;
+       background: lighten($light, 30%);
+     }
+     @include carousel-animation {
+       &--animate--right {
+         animation: right-card 250ms linear;
+         animation-fill-mode: forwards;
+         opacity: 0;
+         @keyframes right-card {
+           from {
+             opacity: 0;
+             transform: translateX(-50vw);
+           }
+ 
+           to {
+             opacity: 1;
+             transform: translateX(0px);
+           }
+         }
+       }
+       &--animate--left {
+         animation: left-card 250ms linear;
+         animation-fill-mode: forwards;
+         @keyframes left-card {
+           from {
+             opacity: 0;
+             transform: translateX(50vw);
+           }
+           to {
+             opacity: 1;
+             transform: translateX(0px);
+           }
+         }
+       }
+     }
+     &--current {
+       display: flex;
+     }
+   }
+}

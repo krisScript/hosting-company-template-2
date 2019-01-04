@@ -1,0 +1,126 @@
+.section {
+  width: 100vw;
+  display: flex;
+  padding: 3rem 1.3rem 3rem 1.3rem;
+
+  &--center {
+    @include flex-center;
+  }
+  &--column {
+    flex-flow: column;
+  }
+  &--desktop--row {
+    @include desktop {
+      flex-flow: row;
+    }
+  }
+  &__container {
+    flex: 0 0 100%;
+    padding: 1rem;
+    &__img {
+      width: 100%;
+    }
+    @include desktop {
+      flex: 0 0 45%;
+    }
+  }
+  &__questions--container{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  &__question{
+    width: 80%;
+    text-align: center;
+    flex-flow: column;
+    align-items: center;
+    padding: 0.5rem;
+    justify-content: center;
+    background: $light;
+    margin: 0.5rem;
+    summary{
+      outline: none;
+      font-size: 1.2rem;
+      padding: 0.5rem;
+    }
+    p{
+      padding: 1rem;
+      text-align: left;
+      font-size: 1rem;
+    }
+  }
+  &__title {
+    font-size: 1.7rem;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+  }
+  &__text {
+    line-height: 1.5;
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+    @include desktop {
+      width: 100%;
+    }
+  }
+
+  &__buttons--container {
+    margin-top: 2rem;
+    display: flex;
+    flex-flow: row wrap;
+    & > * {
+      flex: 1 0 40%;
+      margin: 1rem;
+      @include desktop {
+        flex: 1 0 20%;
+      }
+    }
+  }
+  &--light {
+    background: $light;
+  }
+  &--primary {
+    background: $primary;
+  }
+  &--dark {
+    background: $dark;
+  }
+  &--landing {
+    &__title {
+      font-size: 2.4rem;
+      padding: 0.5rem;
+
+      @include desktop {
+        font-size: 3rem;
+      }
+    
+   
+      &__text {
+        padding: 1rem;
+        text-align: center;
+        font-size: 1rem;
+        width: 100%;
+        background: $light;
+      }
+    }
+    &__text {
+      font-size: 1rem;
+      padding: 0.6rem;
+      opacity: 0.8;
+      width: 90%;
+      margin: 1rem 0 2rem 0;
+      text-align: center;
+      line-height: 1.9;
+      @include desktop {
+        width: 40%;
+        font-size: 1.2rem;
+      }
+    }
+    height: 100vh;
+    background: linear-gradient(rgba(black, 0.5), rgba(black, 0.5)),
+      url(../assets/images/landing.jpg) center no-repeat;
+    background-size: cover;
+  }
+}

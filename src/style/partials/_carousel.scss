@@ -1,0 +1,28 @@
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    @include desktop{
+      width: 100%;
+    }
+    &__button {
+      background: none;
+      padding: none;
+      font-size: 1.5rem;
+      color: $dark;
+      &:hover{
+        color: $secondary;
+      }
+      @include desktop{
+        display: none;
+      } 
+    }
+    &__container {
+      overflow: hidden;
+      @include flex-center;
+      @include desktop{
+        width: 100%;
+      }
+    }
+  }
+  

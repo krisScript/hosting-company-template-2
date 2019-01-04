@@ -1,0 +1,35 @@
+@import 'vendor/normalize';
+@import 'modules/variables';
+@import 'modules/mixins';
+@import 'modules/media-queries';
+@import 'modules/utilities';
+@import 'partials/button';
+@import 'partials/header';
+@import 'partials/nav-mobile';
+@import 'partials/section';
+@import 'partials/form';
+@import 'partials/cards-container';
+@import 'partials/card';
+@import 'partials/carousel';
+@import 'partials/fade';
+@import 'partials/contact-form';
+@import 'partials/social-list';
+@import 'partials/footer';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,body{
+    max-width: 100%;
+    max-height:100%;
+    overflow-x: hidden;
+}
+body{
+    font-size: 10px;
+    color: $dark;
+    font-family: 'Roboto', sans-serif;
+
+}
